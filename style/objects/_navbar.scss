@@ -12,16 +12,15 @@
     align-items: center;
   }
 
-  &__brand{
+  &__brand {
     font-size: 36px;
   }
 
   &__brand,
-  &__item{
-    & > a{
+  &__item {
+    & > a {
       color: white;
       text-decoration: none;
     }
   }
-
 }
