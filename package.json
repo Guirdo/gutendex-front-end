@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "eslint": "^8.29.0",
+    "eslint-config-google": "^0.14.0",
     "sass": "^1.56.1",
     "stylelint": "^14.16.0",
     "stylelint-config-standard": "^29.0.0",
