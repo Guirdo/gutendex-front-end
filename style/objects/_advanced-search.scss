@@ -1,0 +1,25 @@
+.advanced-search{
+  flex-basis: 240px;
+  flex-shrink: 1;
+  background-color: $secondary;
+  
+  display: flex;
+  flex-direction: column;
+  gap: $s-lg;
+  padding: $s-sm;
+
+  &__title{
+    font-size: $s-lg;
+  }
+
+  &-form{
+    display: flex;
+    flex-direction: column;
+    gap: $s-md;
+    
+    &__button{
+      background-color: $info;
+    }
+  }
+
+}
