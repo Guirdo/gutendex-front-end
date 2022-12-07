@@ -5,10 +5,6 @@ main {
   height: 100%;
 }
 
-label {
-  font-weight: bold;
-}
-
 input {
   padding: $s-xs;
 }
@@ -21,4 +17,5 @@ button {
   padding: $s-xs;
   font-size: $s-md;
   font-weight: bold;
+  border-radius: $s-xs;
 }
