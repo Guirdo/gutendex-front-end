@@ -1,0 +1,27 @@
+.navbar {
+  width: 100%;
+  background-color: $primary;
+  padding: $s-sm;
+  color: white;
+
+  &-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: $s-xlg;
+    align-items: center;
+  }
+
+  &__brand{
+    font-size: 36px;
+  }
+
+  &__brand,
+  &__item{
+    & > a{
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+}
