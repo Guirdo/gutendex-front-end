@@ -1,30 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gutendex library</title>
-  </head>
-  <body>
 
-    <header>
-      <nav class="navbar">
-        <ul class="navbar-list">
-          <li class="navbar__brand">
-            <a href="/">Gutendex library</a>
-          </li>
-          <li class="navbar__item">
-            <a href="/dashboard">Dashboard</a>
-          </li>
-          <li class="navbar__item">
-            <a href="/add-new-book">Add new book</a>
-          </li>
-          <li class="navbar-quick-search"></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gutendex library</title>
+</head>
 
-    <script type="module" src="./main.js"></script>
+<body>
 
-  </body>
+  <header>
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li class="navbar__brand">
+          <a href="/">Gutendex library</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/dashboard">Dashboard</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/add-new-book">Add new book</a>
+        </li>
+        <li class="navbar-quick-search"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <aside class="advanced-search">
+      <h3>Advanced search</h3>
+
+      <form class="advanced-search-form">
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input id="author" type="text">
+        </div>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input id="title" type="text">
+        </div>
+        <div class="form-group">
+          <label for="topic">Topic</label>
+          <input id="topic" type="text">
+        </div>
+        <div class="form-group">
+          <label for="language">Language</label>
+          <select id="language">
+            <option value="any">Any</option>
+            <option value="en">English</option>
+            <option value="spa">Spanish</option>
+          </select>
+        </div>
+
+        <button class="button" type="submit">
+          Search
+        </button>
+      </form>
+    </aside>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+
+</body>
+
 </html>
