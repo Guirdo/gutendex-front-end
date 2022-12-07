@@ -3,10 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Gutendex library</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+
+    <header>
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar__brand">
+            <a href="/">Gutendex library</a>
+          </li>
+          <li class="navbar__item">
+            <a href="/dashboard">Dashboard</a>
+          </li>
+          <li class="navbar__item">
+            <a href="/add-new-book">Add new book</a>
+          </li>
+          <li class="navbar-quick-search"></li>
+        </ul>
+      </nav>
+    </header>
+
+    <script type="module" src="./main.js"></script>
+
   </body>
 </html>
