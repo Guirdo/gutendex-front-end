@@ -1,0 +1,18 @@
+.button {
+  @extend button;
+  text-decoration: none;
+  border: 1px solid black;
+  color: black;
+
+  &--success {
+    background-color: $success;
+  }
+
+  &--info {
+    background-color: $info;
+  }
+
+  &:active {
+    box-shadow: inset 1px -1px $dark;
+  }
+}
