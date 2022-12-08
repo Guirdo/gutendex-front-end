@@ -30,7 +30,10 @@
     <aside class="advanced-search">
       <h3 class="advanced-search__title">Advanced search</h3>
 
-      <form class="form advanced-search-form">
+      <form 
+        id="advancedSearchForm"
+        class="form advanced-search-form"
+      >
         <div class="form-group">
           <label for="author">Author</label>
           <input id="author" type="text">
@@ -46,8 +49,7 @@
         <div class="form-group">
           <label for="language">Language</label>
           <select id="language">
-            <option value="any">Any</option>
-            <option value="en">English</option>
+            <option selected value="en">English</option>
             <option value="es">Spanish</option>
           </select>
         </div>
