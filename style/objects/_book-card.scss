@@ -1,0 +1,52 @@
+.book-card {
+  width: 540px;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: $s-xs;
+  padding: $s-xs;
+  height: 240px;
+  border: 1px solid $dark;
+  border-radius: $s-xs;
+
+  &-cover {
+    min-width: 120px;
+    flex-basis: 120px;
+
+    &__image{
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: $s-xs; 
+    flex-grow: 2;
+  }
+
+  &__title {
+    font-size: $s-lg;
+    font-weight: bold;
+  }
+
+  &__authors {
+    font-style: italic;
+  }
+
+  &-topics-list,
+  &-bookshelves-list {
+    list-style: none;
+    margin-inline-start: $s-sm;
+  }
+
+  &-read-options {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: $s-md;
+  }
+}
