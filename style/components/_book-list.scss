@@ -1,6 +1,7 @@
 .book-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: $s-lg;
   gap: $s-lg;
 }
