@@ -13,7 +13,7 @@ export default function BookCard(book) {
 
       <div class="book-card-info">
         <span class="book-card__title">${book.title}</span>
-        <span class="book-card__authors">By ${book.authors.join(', ')}</span>
+        <span class="book-card__authors">By ${book.authors.map((author)=> author.name).join(', ')}</span>
         <span class="book-card__languages">
           Available in ${book.languages.length} ${book.languages.length === 1 ? 'language' : 'languages'}
         </span>
@@ -28,7 +28,7 @@ export default function BookCard(book) {
         <details class="book-card-bookshelves">
           <summary>Bookshelves</summary>
           <ul class="book-card-bookshelves-list">
-            ${book.topics.map((topic) => (`
+            ${book.bookshelves.map((topic) => (`
               <li>${topic}</li>
             `)).join('')}
           </ul>
