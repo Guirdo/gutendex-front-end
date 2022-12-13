@@ -58,6 +58,8 @@ addNewBookForm.addEventListener('submit', (event) => {
       },
       download_count: 0,
     });
+
+    location.href = '/';
   } else {
     alert('Please, enter all the fields correctly');
   }
