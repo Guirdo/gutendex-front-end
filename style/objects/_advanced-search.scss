@@ -6,6 +6,8 @@
   flex-direction: column;
   gap: $s-lg;
   padding: $s-sm;
+  position: sticky;
+  top: 0;
 
   &__title {
     font-size: $s-lg;
