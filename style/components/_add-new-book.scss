@@ -1,0 +1,19 @@
+.add-new-book {
+  width: 50%;
+  margin-block: $s-xlg;
+  margin-inline: auto;
+  padding: $s-lg;
+  border: 1px solid $dark;
+  border-radius: $s-xs;
+
+  display: flex;
+  flex-direction: column;
+  gap: $s-lg;
+  
+  &-form {
+    padding-inline: $s-md;
+    display: flex;
+    flex-direction: column;
+    gap: $s-sm;
+  }
+}
