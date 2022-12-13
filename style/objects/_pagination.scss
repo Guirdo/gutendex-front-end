@@ -1,0 +1,15 @@
+.pagination {
+  width: 100%;
+  background-color: white;
+  padding: $s-xs;
+  margin-block-end: $s-xlg;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: $s-sm;
+
+  &__button {
+    width: 120px;
+  }
+}
