@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add new book</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li class="navbar__brand">
+          <a href="/">Gutendex library</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/dashboard/">Dashboard</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/add-new-book/">Add new book</a>
+        </li>
+        <li class="navbar-quick-search"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="dashboard">
+    <h1 class="dashboard__title">Dashboard</h1>
+
+    <div class="dashboard-bar">
+      <div class="dashboard-sneakpeek">
+        <span class="dashboard__label">Total searches</span>
+        <span 
+          id="totalSearches"
+          class="dashboard__data"
+        >0</span>
+      </div>
+
+      <div class="dashboard-sneakpeek">
+        <span class="dashboard__label">Total books you added</span>
+        <span 
+          id="totalAddedBooks"
+          class="dashboard__data"
+        >0</span>
+      </div>
+    </div>
+
+    <div class="dashboard-main">
+      <div class="dashboard-chart">
+
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="./main.js"></script>
+
+</body>
+
+</html>
