@@ -2,9 +2,11 @@
 import '../style/global.scss';
 import BookCard from '../components/BookCard';
 import Pagination from '../components/Pagination';
+import UserBehaviourDataBase from '../store/userBehaviour';
 
 const advancedSearchForm = document.querySelector('#advancedSearchForm');
 const bookList = document.querySelector('#bookList');
+const userBehaviourDB = new UserBehaviourDataBase();
 
 let author;
 let title;
@@ -93,6 +95,7 @@ advancedSearchForm.addEventListener('submit', async (event) => {
   topic = document.querySelector('#topic').value;
   language = document.querySelector('#language').value;
 
+  userBehaviourDB.addSearch({author, title, topic, language});
   renderResults()
       .then(()=> renderPagination());
 });
