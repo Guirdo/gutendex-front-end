@@ -8,6 +8,10 @@ class UserBehaviourDataBase {
     this.searches.push(search);
     localStorage.setItem('searches', JSON.stringify(this.searches));
   }
+
+  getTotalSearches() {
+    return this.searches.length;
+  }
 }
 
 export default UserBehaviourDataBase;
