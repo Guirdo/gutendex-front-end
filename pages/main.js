@@ -54,6 +54,20 @@ function renderPagination() {
   });
 }
 
+async function renderBookList(books) {
+  bookList.innerHTML = await books.map((book) => BookCard({
+    cover: book.formats['image/jpeg'],
+    title: book.title,
+    authors: book.authors,
+    languages: book.languages,
+    topics: book.subjects,
+    bookshelves: book.bookshelves,
+    readOnlineLink: book.formats['text/html'],
+    epubDownloadLink: book.formats['application/epub+zip'],
+    downloadCount: book.download_count,
+  })).join('');
+}
+
 async function renderResults() {
   const url = prepareApiURL();
 
@@ -65,17 +79,7 @@ async function renderResults() {
         totalBooks = count;
         previousPage = previous;
         nextPage = next;
-        bookList.innerHTML = await results.map((book) => BookCard({
-          cover: book.formats['image/jpeg'],
-          title: book.title,
-          authors: book.authors,
-          languages: book.languages,
-          topics: book.subjects,
-          bookshelves: book.bookshelves,
-          readOnlineLink: book.formats['text/html'],
-          epubDownloadLink: book.formats['application/epub+zip'],
-          downloadCount: book.download_count,
-        })).join('');
+        renderBookList(results);
       })
       .catch((error) => console.log(error));
 }
