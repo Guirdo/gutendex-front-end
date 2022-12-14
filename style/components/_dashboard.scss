@@ -1,0 +1,43 @@
+.dashboard {
+  padding: $s-xlg;
+  display: flex;
+  flex-direction: column;
+  gap: $s-md;
+
+  &__title {
+    font-size: 40px;
+  }
+
+  &-bar {
+    display: flex;
+    flex-direction: row;
+    gap: $s-xlg;
+    padding: $s-md;
+    border: 1px solid black;
+    border-radius: $s-xs;
+  }
+
+  &-sneakpeek {
+    display: flex;
+    flex-direction: column;
+    gap: $s-md;
+    padding: $s-md;
+    align-items: center;
+  }
+
+  &__label {
+    font-size: $s-lg;
+    color: gray;
+    font-weight: bold;
+  }
+
+  &__data {
+    font-size: 40px;
+  }
+
+  &-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $s-md;
+  }
+}
