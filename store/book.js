@@ -8,6 +8,10 @@ class BookDataBase {
     this.books.push(book);
     localStorage.setItem('books', JSON.stringify(this.books));
   }
+
+  getTotalBooks() {
+    return this.books.length;
+  }
 }
 
 export default BookDataBase;
