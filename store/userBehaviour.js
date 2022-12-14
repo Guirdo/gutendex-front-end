@@ -1,12 +1,12 @@
 /* eslint-disable require-jsdoc */
 class UserBehaviourDataBase {
   constructor() {
-    this.searchs = JSON.parse(localStorage.getItem('searchs')) || [];
+    this.searches = JSON.parse(localStorage.getItem('searches')) || [];
   }
 
   addSearch(search) {
-    this.searchs.push(search);
-    localStorage.setItem('searchs', JSON.stringify(this.searchs));
+    this.searches.push(search);
+    localStorage.setItem('searches', JSON.stringify(this.searches));
   }
 }
 
