@@ -38,6 +38,17 @@
   &-main {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, 440px);
     gap: $s-md;
+  }
+
+  &-chart {
+    border: 1px solid black;
+    border-radius: $s-xs;
+    padding: $s-sm;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
