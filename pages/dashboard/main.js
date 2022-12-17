@@ -1,18 +1,18 @@
 /* eslint-disable require-jsdoc */
 import '../../style/global.scss';
 import Chart from 'chart.js/auto';
-import UserBehaviourDataBase from '../../store/userBehaviour';
 import BookDataBase from '../../store/book';
+import SearchDataBase from '../../store/search';
 
-const userBehaviourDB = new UserBehaviourDataBase();
+const searchDB = new SearchDataBase();
 const bookDB = new BookDataBase();
-const authorFrequency = userBehaviourDB.getAttributeFrequency('author');
-const topicFrequency = userBehaviourDB.getAttributeFrequency('topic');
+const authorFrequency = searchDB.getAttributeFrequency('author');
+const topicFrequency = searchDB.getAttributeFrequency('topic');
 const totalSearches = document.querySelector('#totalSearches');
 const totalAddedBooks = document.querySelector('#totalAddedBooks');
 
 // Shows the total searches made by the user
-totalSearches.innerHTML = userBehaviourDB.getTotalSearches();
+totalSearches.innerHTML = searchDB.getTotalSearches();
 // Show the total books added by the user
 totalAddedBooks.innerHTML = bookDB.getTotalBooks();
 

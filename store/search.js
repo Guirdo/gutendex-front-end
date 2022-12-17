@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-class UserBehaviourDataBase {
+class SearchDataBase {
   constructor() {
     this.searches = JSON.parse(localStorage.getItem('searches')) || [];
   }
@@ -31,4 +31,4 @@ class UserBehaviourDataBase {
   }
 }
 
-export default UserBehaviourDataBase;
+export default SearchDataBase;
