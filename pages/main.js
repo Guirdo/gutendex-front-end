@@ -3,15 +3,18 @@ import '../style/global.scss';
 import BookCard from '../components/BookCard';
 import Pagination from '../components/Pagination';
 import SearchDataBase from '../store/search';
+import BookDataBase from '../store/book';
 
 const advancedSearchForm = document.querySelector('#advancedSearchForm');
 const bookList = document.querySelector('#bookList');
 const searchDB = new SearchDataBase();
+const bookDB = new BookDataBase();
 
 let author;
 let title;
 let topic;
 let language;
+let source;
 let totalBooks;
 let previousPage;
 let currentPage;
@@ -57,33 +60,47 @@ function renderPagination() {
 }
 
 async function renderBookList(books) {
-  bookList.innerHTML = await books.map((book) => BookCard({
-    cover: book.formats['image/jpeg'],
-    title: book.title,
-    authors: book.authors,
-    languages: book.languages,
-    topics: book.subjects,
-    bookshelves: book.bookshelves,
-    readOnlineLink: book.formats['text/html'],
-    epubDownloadLink: book.formats['application/epub+zip'],
-    downloadCount: book.download_count,
-  })).join('');
+  if (totalBooks > 0) {
+    bookList.innerHTML = await books.map((book) => BookCard({
+      cover: book.formats['image/jpeg'],
+      title: book.title,
+      authors: book.authors,
+      languages: book.languages,
+      topics: book.subjects,
+      bookshelves: book.bookshelves,
+      readOnlineLink: book.formats['text/html'],
+      epubDownloadLink: book.formats['application/epub+zip'],
+      downloadCount: book.download_count,
+    })).join('');
+  } else {
+    bookList.innerHTML = `<h3>There's no results</h3>`;
+  }
 }
 
 async function renderResults() {
-  const url = prepareApiURL();
-
   bookList.innerHTML = '<h3>Wait a second...</h3>';
-
-  return await fetch(url)
-      .then(async (res) => await res.json())
-      .then(async ({count, previous, next, results}) => {
-        totalBooks = count;
-        previousPage = previous;
-        nextPage = next;
-        renderBookList(results);
-      })
-      .catch((error) => console.log(error));
+  if (source) {
+    const url = prepareApiURL();
+    return await fetch(url)
+        .then(async (res) => await res.json())
+        .then(async ({count, previous, next, results}) => {
+          totalBooks = count;
+          previousPage = previous;
+          nextPage = next;
+          renderBookList(results);
+        })
+        .catch((error) => console.log(error));
+  } else {
+    return await bookDB.searchBook(author, title, topic, language)
+        .then(({count, previous, next, results}) =>{
+          totalBooks = count;
+          previousPage = previous;
+          nextPage = next;
+          console.log(results);
+          renderBookList(results);
+        })
+        .catch((error) => console.log(error));
+  }
 }
 
 advancedSearchForm.addEventListener('submit', async (event) => {
@@ -94,9 +111,10 @@ advancedSearchForm.addEventListener('submit', async (event) => {
   title = document.querySelector('#title').value;
   topic = document.querySelector('#topic').value;
   language = document.querySelector('#language').value;
+  source = document.querySelector('#source').checked;
 
-  searchDB.addSearch({author, title, topic, language});
+  searchDB.addSearch({author, title, topic, language, source});
   renderResults()
-      .then(()=> renderPagination());
+      .then(() => renderPagination());
 });
 
