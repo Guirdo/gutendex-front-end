@@ -1,0 +1,39 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: $s-lg;
+
+  &-wrapper {
+    display: flex;
+    gap: $s-xs;
+  }
+
+  & input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: $info;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: $s-sm;
+      height: $s-sm;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: all 0.4s ease;
+    }
+  }
+
+  & input[type="checkbox"]:checked+&__slider::before {
+    transform: translateX($s-lg);
+  }
+}
