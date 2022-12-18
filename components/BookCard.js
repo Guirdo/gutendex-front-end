@@ -7,7 +7,7 @@ export default function BookCard(book) {
         <img 
           class="book-card-cover__image"
           src="${book.cover}" 
-          alt="${book.title}}"
+          alt="${book.title}"
         >
       </figure>
 
