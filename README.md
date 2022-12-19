@@ -7,6 +7,7 @@ Gutendex front-end is a web app where the user can search books by title, author
   - [Tech stack](#tech-stack)
   - [Requirements](#requirements)
   - [Installation](#installation)
+- [Code structure](#code-structure)
 
 ## Deployment
 
@@ -41,3 +42,9 @@ npm install
 ```
 npm run dev
 ```
+## Code structure
+
+- ```components/```: component templates
+- ```pages/```: html pages
+- ```store/```: data bases for the user searches and books created by them
+- ```style/```: styles of the project 
