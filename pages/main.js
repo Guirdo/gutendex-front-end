@@ -1,9 +1,11 @@
+/* eslint-disable new-cap */
 /* eslint-disable require-jsdoc */
 import '../style/global.scss';
 import BookCard from '../components/BookCard';
 import Pagination from '../components/Pagination';
 import SearchDataBase from '../store/search';
 import BookDataBase from '../store/book';
+import prepareApiURL from '../helper/prepareApiURL';
 
 const advancedSearchForm = document.querySelector('#advancedSearchForm');
 const bookList = document.querySelector('#bookList');
@@ -19,16 +21,6 @@ let totalBooks;
 let previousPage;
 let currentPage;
 let nextPage;
-
-function prepareApiURL() {
-  return encodeURI(
-      'https://gutendex.com/books?' +
-    ((author || title) && `search=${author && author + ' '}${title}`) +
-    (topic && `&topic=${topic}`) +
-    (language && `&languages=${language}`) +
-    `&page=${currentPage}`,
-  );
-}
 
 function renderPagination() {
   const totalPages = Math.ceil(totalBooks/32);
@@ -80,7 +72,7 @@ async function renderBookList(books) {
 async function renderResults() {
   bookList.innerHTML = '<h3>Wait a second...</h3>';
   if (source) {
-    const url = prepareApiURL();
+    const url = prepareApiURL(author, title, topic, language, currentPage);
     return await fetch(url)
         .then(async (res) => await res.json())
         .then(async ({count, previous, next, results}) => {
@@ -117,4 +109,3 @@ advancedSearchForm.addEventListener('submit', async (event) => {
   renderResults()
       .then(() => renderPagination());
 });
-
