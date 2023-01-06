@@ -6,6 +6,7 @@ import {defineConfig} from 'vite';
 const root = resolve(__dirname, 'pages');
 const outDir = resolve(__dirname, 'dist');
 const publicDir = resolve(__dirname, 'public');
+const testDir = resolve(__dirname, 'test');
 
 const input = Object.fromEntries(glob.sync('pages/**/*.html').map((file) => {
   const filePath = resolve(root, relative('pages', file));
@@ -38,5 +39,11 @@ export default defineConfig({
       },
     },
     target: 'esnext',
+  },
+  test: {
+    dir: testDir,
+    reporters: [
+      'verbose',
+    ],
   },
 });
