@@ -45,5 +45,8 @@ export default defineConfig({
     reporters: [
       'verbose',
     ],
+    globals: true,
+    setupFiles: ['vitest-localstorage-mock'],
+    mockReset: false,
   },
 });
