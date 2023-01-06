@@ -4,6 +4,17 @@ class BookDataBase {
     this.books = JSON.parse(localStorage.getItem('books')) || [];
   }
 
+  getBooks() {
+    return this.books;
+  }
+
+  getDownloadCountAverage() {
+    const sum = this.books.map((book) => book.download_count)
+        .reduce((total, value)=> total+value, 0);
+
+    return Math.floor(sum / this.books.length);
+  }
+
   addBook(book) {
     this.books.push(book);
     localStorage.setItem('books', JSON.stringify(this.books));
