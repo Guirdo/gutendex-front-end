@@ -1,5 +1,5 @@
 import prepareApiURL from '../../helper/prepareApiURL';
-import { beforeEach, describe, expect, it } from 'vitest';
+import {beforeEach, describe, expect, it} from 'vitest';
 
 describe('#prepareApiURL', () => {
   const baseURL = 'https://gutendex.com/books?';
@@ -17,11 +17,23 @@ describe('#prepareApiURL', () => {
     currentPage = 1;
   });
 
+  it('returns url for an empty search', ()=> {
+    expect(prepareApiURL(author, title, topic, language, currentPage))
+        .toBe(`${baseURL}&page=1`);
+  });
+
   it('returns url with author and title', () => {
-    const author = 'aldous';
-    const title = 'brave';
+    author = 'aldous';
+    title = 'brave';
 
     expect(prepareApiURL(author, title, topic, language, currentPage))
         .toBe(`${baseURL}search=${author}%20${title}&page=1`);
+  });
+
+  it('returns url with title but without author', () => {
+    title = 'brave';
+
+    expect(prepareApiURL(author, title, topic, language, currentPage))
+        .toBe(`${baseURL}search=${title}&page=1`);
   });
 });
