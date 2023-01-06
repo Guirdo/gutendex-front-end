@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Book One",
+    "authors": [
+      {
+        "name": "Author One"
+      }
+    ],
+    "copyright": true,
+    "languages": [
+      "en"
+    ],
+    "subjects": [
+      "Topic one"
+    ],
+    "bookshelves": [
+      "bookshelf one"
+    ],
+    "formats": {
+      "text/html": "#",
+      "application/epub+zip": "#"
+    },
+    "download_count": 2000
+  },
+  {
+    "title": "Book Two",
+    "authors": [
+      {
+        "name": "Author Two"
+      }
+    ],
+    "copyright": true,
+    "languages": [
+      "en"
+    ],
+    "subjects": [
+      "Topic two"
+    ],
+    "bookshelves": [
+      "bookshelf two"
+    ],
+    "formats": {
+      "text/html": "#",
+      "application/epub+zip": "#"
+    },
+    "download_count": 2001
+  },
+  {
+    "title": "Book Three",
+    "authors": [
+      {
+        "name": "Author Three"
+      }
+    ],
+    "copyright": true,
+    "languages": [
+      "en"
+    ],
+    "subjects": [
+      "Topic Three"
+    ],
+    "bookshelves": [
+      "bookshelf Three"
+    ],
+    "formats": {
+      "text/html": "#",
+      "application/epub+zip": "#"
+    },
+    "download_count": 2003
+  }
+]
